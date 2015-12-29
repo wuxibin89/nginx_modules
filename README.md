@@ -10,7 +10,7 @@ make install
 
 ## module_plugin
 
-A C++ plugin manager.
+Manage C++ plugin in Nginx, including dynamically open, intialization and choosing proper plugin to handle each http request according nginx.conf.
 
 ## module_handle
 
