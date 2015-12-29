@@ -1,0 +1,12 @@
+ngx_addon_name=ngx_http_proto_upstream_module
+
+HTTP_MODULES="$HTTP_MODULES ngx_http_proto_upstream_module"
+
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS 
+$ngx_addon_dir/ngx_protocol.c
+$ngx_addon_dir/ngx_upstream_module.c
+$ngx_addon_dir/ngx_upstream_interface.cc"
+
+CORE_INCS="$CORE_INCS $ngx_addon_dir include"
+
+CORE_LIBS="$CORE_LIBS -lstdc++" 

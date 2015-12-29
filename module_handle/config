@@ -1,0 +1,11 @@
+ngx_addon_name=ngx_http_handle_module
+
+HTTP_MODULES="$HTTP_MODULES ngx_http_handle_module"
+
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS  
+$ngx_addon_dir/ngx_handle_module.c 
+$ngx_addon_dir/ngx_handle_interface.cc"
+
+CORE_INCS="$CORE_INCS $ngx_addon_dir include"
+
+CORE_LIBS="$CORE_LIBS -L$ngx_addon_dir -ldl -rdynamic -lstdc++" 

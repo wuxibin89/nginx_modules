@@ -1,0 +1,11 @@
+ngx_addon_name=ngx_http_subrequest_module
+
+HTTP_MODULES="$HTTP_MODULES ngx_http_subrequest_module"
+
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS  
+$ngx_addon_dir/ngx_subrequest_module.c 
+$ngx_addon_dir/ngx_subrequest_interface.cc"
+
+CORE_INCS="$CORE_INCS $ngx_addon_dir include"
+
+CORE_LIBS="$CORE_LIBS -lstdc++" 

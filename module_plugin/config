@@ -1,0 +1,12 @@
+ngx_addon_name=ngx_http_plugin_module
+
+HTTP_MODULES="$HTTP_MODULES ngx_http_plugin_module"
+
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS  
+$ngx_addon_dir/ngx_plugin_module.c
+$ngx_addon_dir/plugin_manager.cc
+$ngx_addon_dir/utils.cc"
+
+CORE_INCS="$CORE_INCS $ngx_addon_dir include"
+
+CORE_LIBS="$CORE_LIBS -ldl -lstdc++" 
