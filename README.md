@@ -1,11 +1,12 @@
 # nginx_modules
 
-## Build
+## Build && Run
 
 ```
 ./configure --add-module=module_plugin --add-module=module_handle --add-module=module_upstream --add-module=module_subrequest --add-module=module_shm_dict --with-http_realip_module
 make
 make install
+nginx -c conf/nginx.conf -p `pwd`
 ```
 
 ## module_plugin
@@ -52,4 +53,10 @@ Subrequest module processing arbitrary number of subrequests to multiple backend
 
 ## module_shm_dict
 
-Simple key-value store based on shared memory.
+Simple key-value store based on shared memory. To initialize a shared zone, using 
+*shm_dict_zone* command in nginx.conf:
+```
+shm_dict_zone zone=AAA max_size=16m;
+shm_dict_zone zone=BBB max_size=64m;
+```
+You can create multiple zones with different name and size.
